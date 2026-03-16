@@ -1,0 +1,14 @@
+# create new
+# for example, touch a file [/tmp/helloworld.txt] with 644 on target Hosts
+# for [hosts] value, specify the group name you set on an inventory you added
+# ⇒ example [hosts] value below, that is the group name set on here of [6]
+---
+- hosts: Debian
+  tasks:
+  - name: Test Task
+    file:
+      path: /root/helloworld.txt
+      state: touch
+      owner: root
+      group: root
+      mode: 0644
